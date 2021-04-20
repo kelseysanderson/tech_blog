@@ -1,2 +1,9 @@
-<h1> Home pag coming soon!!</h1>
-
+<section class = "post">
+    <div class = "container justify-content-center">
+        <div class="col-12">
+            {{#each homepagePosts as |post|}}
+                {{> home-partial post}}
+            {{/each}}
+        </div>
+    </div>
+<section>

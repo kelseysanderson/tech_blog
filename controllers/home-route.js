@@ -1,9 +1,27 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-      res.render('home')
+      const dbPostData = await Post.findAll( {
+        attributes: [
+          'id',
+          'title',
+          'content',
+          'created_at',
+        ],
+        include: [{
+          model: User,
+          attributes: [
+            'username',
+          ],
+        },
+        ]
+      });
+      
+      const homepagePosts = dbPostData.map(post => post.get({ plain: true }));
+      console.log(homepagePosts)
+      res.render('home', {homepagePosts})
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
