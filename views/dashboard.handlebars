@@ -1,18 +1,21 @@
-<h1>Welcome Back, {{user.username}}!</h1>
+<h1 id="dashboard-header">{{user.username}}'s Posts:</h1>
 
-{{#if posts.length}}
 <section class = "post">
     <div class = "container justify-content-center">
         <div class="col-12">
             {{#each dashboardPosts as |post|}}
-                {{> dashboard-partial post}}
+                <div class="card">
+                    <div class="card-header">{{title}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Posted By: {{user.username}} {{format_date created_at}} {{format_time created_at}}</h5>
+                        <p class="card-text">{{content}}</p>
+                    </div>
+                </div>
             {{/each}}
         </div>
     </div>
 <section>
-{{/if}}
-
 
 <div class="form-group">
-    <button id= "newpost-btn" class="btn btn-primary">New Post</button>
+    <button id="newpost-btn" class="btn btn-primary" type = "submit"><a id= "newpost-link" href="/newpost">New Post</a></button>
 </div>

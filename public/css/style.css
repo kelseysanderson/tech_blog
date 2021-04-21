@@ -1,20 +1,12 @@
 
-
 header{
-    background-color: #dfdfdf;
     padding:40px 0px 40px 0px;
-    border-bottom: 2px solid #385770;
 }
 
 #page-title{
     font-size:55px;
-    margin-left:40px;
-    border: 3px solid #385770;
-    border-radius: 10px;
-    width: 26%;
-    padding: 20px;
-    background-color: #b8d0e4;
-    box-shadow: 5px 5px 5px #385770;
+    margin-left: 40px;
+    color:#0b2e17
 }
 
 #home{
@@ -22,29 +14,25 @@ header{
 }
 
 .navbar{
+    border-top: 2px solid #527a6b;
+    border-bottom: 2px solid #001a00;
     display:flex;
     justify-content: flex-end;
-    margin-right:60px
+    /* margin-right:60px */
+    margin-top: 20px;
+    background: linear-gradient(to bottom, #027702 0%, #015301 100%);
 }
 
 .nav{
-    text-align: center;
-    display:inline-block;
-    border-radius:20px;
-    width:120px;
-    padding: 10px;
-    margin-left: 20px;
-    margin-top:15px;
-    font-size: 20px;
-    background-color: #ff1e00;
+    font-size:28px;
     color:white;
+    margin-right: 35px
 }
 
 .nav:hover{
     cursor:pointer;
-    background-color: #fc4d36;
+    color: rgb(219, 219, 219);
     text-decoration:none;
-    color:white;
 }
 
 body{
@@ -57,13 +45,13 @@ body{
 
 .card-header{
     color:rgb(29, 28, 28);
-    background-color:#385770;
+    background: linear-gradient(to bottom, #027702 0%, #015301 100%);
     font-size: 30px;
     color:#eeeeee;
 }
 
 .card-body{
-    background-color:#dfdfdf;
+    background-color: #e4e5e6;
 }
 
 .form-style {
@@ -76,19 +64,60 @@ body{
     border-style: double;
     border-width: thick;
     background-color: #b8d0e4;
-  }
-  
-  .btn{
-    background-color:#ff1e00;
-    margin-left:20px;
-  }
+}
 
-  .btn:hover{
-    cursor:pointer;
-    background-color: #fc4d36;
+.btn{
+background-color:#0d5b1e;
+margin-left:20px;
+}
+
+.btn:hover{
+cursor:pointer;
+background-color: #0d5b1e
+;
 }
   
 #newpost-btn{
     margin: 20px 0px 0px 150px;
     padding:15px;
+    color:white;
+    font-size:25px;
+    border-radius: 10px;
+}
+
+#newpost-link{
+    color:white;
+}
+
+#newpost-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+}
+
+#newpost{
+    border: 2px solid black;
+    padding: 30px;
+    width: 65%;
+    margin-bottom:40px;
+}
+
+label{
+    margin-top:20px;
+}
+
+#addpost-btn{
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius:10px;
+}
+
+#dashboard-header{
+    font-size:55px;
+    margin-left:15%;
+    border-radius: 10px;
+    width: 40%;
+    padding: 20px;
+    color:black;  
 }
