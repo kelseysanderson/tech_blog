@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mandali">
     <link rel="stylesheet" href="/css/style.css">
     <title>Tech Blog</title>
 </head>
 <body>
-    <header>
+    <main>
+        <header>
         
-        <h1 id="page-title"> The Tech Blog</h1>
-        <a class="nav" href = "../">Home</a>
-        <a class="nav" href = "../dashboard">Dashboard</a>
-        {{#if loggedIn}}
-        <a class="nav" href="/login"Logout></a>
-        {{else}}
-        <a class="nav" href="/login">Login</a>
-        {{/if}}
-
-    </header>
-    {{{body}}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>          
+            <h1 id="page-title"> The Tech Blog</h1>
+            <div class="navbar">
+                <a id="home" class="nav" href = "../">Home</a>
+                <a class="nav" href = "../dashboard">Dashboard</a>
+                {{#if user.logged_in}}
+                <a class="nav" href="/login">Logout</a>
+                {{else}}
+                <a class="nav" href="/login">Login</a>
+                {{/if}}
+            </div>
+        </header>
+        {{{body}}}
+    </main> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+           
 </body>
 </html>

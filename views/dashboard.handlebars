@@ -1,1 +1,18 @@
-<h1>Dashboard is coming soon!</h1>
+<h1>Welcome Back, {{user.username}}!</h1>
+
+{{#if posts.length}}
+<section class = "post">
+    <div class = "container justify-content-center">
+        <div class="col-12">
+            {{#each dashboardPosts as |post|}}
+                {{> dashboard-partial post}}
+            {{/each}}
+        </div>
+    </div>
+<section>
+{{/if}}
+
+
+<div class="form-group">
+    <button id= "newpost-btn" class="btn btn-primary">New Post</button>
+</div>
