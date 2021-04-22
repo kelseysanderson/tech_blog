@@ -1,9 +1,5 @@
 <h1 id="dashboard-header">{{user.username}}'s Posts:</h1>
 
-<div class="form-group">
-    <button id= "submit-btn" class="btn btn-primary" type="submit"><a id= "newpost-link" href="/newpost">+ add post</a></button>
-</div>
-
 <section class = "post">
     <div class = "container justify-content-center">
         <div class="col-12">
@@ -21,5 +17,25 @@
 <section>
 
 <div class="form-group">
-    <button id="newpost-btn" class="btn btn-primary" type = "submit"><a id= "newpost-link" href="/newpost">new post</a></button>
+    <button id="newpost-btn" class="btn btn-primary" type = "submit"><a id= "newpost-link" href="/newpost">New Post</a></button>
 </div>
+
+
+{{#if loggedIn}}
+<div class="card">
+    <h3 class="card-header"></h3>
+    <form class="card-body comment-form" id="comment-form">
+
+        <label class="form-label">Comment</label>
+        <input id="comment" name="comment-body" class="form-input" />
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/post.js"></script>
+{{/if}}

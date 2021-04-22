@@ -1,0 +1,50 @@
+<div class="form-group">
+    <button id= "submit-btn" class="btn btn-primary" type="submit"><a id= "newpost-link" href="/newpost">+ Add Post</a></button>
+</div>
+<section class = "post">
+    <div class = "container justify-content-center">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header" id="post-link">{{onePost.title}}</div>
+                <div class="card-body">
+                <h5 class="card-title">Posted By: {{user.username}} {{format_date onePost.created_at}} {{format_time onePost.created_at}}</h5>
+                <p class="card-text">{{onePost.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<section>
+<section class = "new-comment">
+    <div class = "container justify-content-center">
+        <div class="col-12">
+            <div class="card">
+               <form class="form comment-form">
+                    <div class="col-md-6">                  
+                        <form class="form newcomment-form">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">New Comment:</label>
+                                <textarea class="form-control" id="post-content" rows="3" name = "new-comment"></textarea>
+                                <button id="addpost-btn" class="btn btn-primary" type = "submit">Add Comment</button>
+                            </div>
+                        </form>                  
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+<section>
+
+
+<section class = "comments">
+{{#each onePost.comments as |comment|}}
+        <div class = "container justify-content-center">
+            <div class="col-12">
+                <div class="card">
+                        <h2>{{comment.comment}} </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+{{/each}}
+</section>
+<script src="/js/addcomment.js"></script>

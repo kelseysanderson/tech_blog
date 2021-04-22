@@ -1,7 +1,8 @@
 <div class="card">
-  <div class="card-header">{{title}}</div>
+  <div class="card-header" > <a href = "post/{{id}}" id="post-link">{{title}}</a></div>
   <div class="card-body">
     <h5 class="card-title">Posted By: {{user.username}} {{format_date created_at}} {{format_time created_at}}</h5>
     <p class="card-text">{{content}}</p>
+    <a class="btn btn-primary" id= "submit-btn" type="submit" href="/post/{{id}}">comments</a>
   </div>
 </div>
