@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
       },
       ]
     });
-    
     const homepagePosts = dbPostData.map(post => post.get({ plain: true }));
     res.render('home', {homepagePosts, "user": req.session.user, })
 
@@ -48,10 +47,39 @@ router.get('/newpost', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// router.get('/', withAuth, async (req, res) => {
+//   try {
+//     const dbPostData = await Post.findAll( {
+//       where: {
+//         user_id: req.session.user_id
+//       },
+//       attributes: [
+//         'id',
+//         'title',
+//         'content',
+//         'created_at',
+//       ],
+//       include: [{
+//         model: User,
+//         attributes: [
+//           'username',
+//         ],
+//       },
+//       ]
+//     });
+//     const dashboardPosts = dbPostData.map(post => post.get({ plain: true }));
+//     console.log(dashboardPosts)
+//     res.render('dashboard', {dashboardPosts, "user": req.session.user, })
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 router.get('/post/:id', async (req, res) => {
   try{
+    console.log("*******************" + {"user": req.session.user})
     const dbPostData = await Post.findAll( {
+      
       where: {
         id: req.params.id
       },
@@ -82,11 +110,13 @@ router.get('/post/:id', async (req, res) => {
     console.log(dbPostData)
     const onePost = dbPostData.map(post => post.get({ plain: true }))[0];
     console.log(onePost)
-    res.render('viewonepost', {onePost, "user": req.session.user})
+    res.render('viewonepost', { onePost, "user": req.session.user, })
   } catch(err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router
